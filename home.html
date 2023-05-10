@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Otaku Resin Shop</title>
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body onload="showSlides()">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+        <header>
+            <div class="logo"><img src="images/logo.png"></a></div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav class="nav_bar">
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="items.html">Item</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class ="container">
+            <div class="mySlides">
+                <div class="numbertext">1/5</div>
+                <img src="images/1.png" style="width: 100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">2/5</div>
+                <img src="images/2.png" style="width: 100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">3/5</div>
+                <img src="images/3.png" style="width: 100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">4/5</div>
+                <img src="images/4.jpg" style="width: 100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">5/5</div>
+                <img src="images/5.png" style="width: 100%">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="caption-container">
+                <p id="caption"></p>
+                <div class="row">
+                    <div class="column">
+                        <img class="demo cursor" src="images/1.png" style="width: 70%;" onclick="currentSlide(1)" alt="Demon Slayer">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="images/2.png" style="width: 70%;" onclick="currentSlide(2)" alt="Bungou Stray Dogs">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="images/3.png" style="width: 70%;" onclick="currentSlide(3)" alt="Code Geass">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="images/4.jpg" style="width: 70%;" onclick="currentSlide(4)" alt="Water Hashira">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="images/5.png" style="width: 70%;" onclick="currentSlide(5)" alt="Itadori Yuji">
+                    </div>
+                </div>
+              </div>
+        </div>
+        <script src="index.js"></script>
+        <h1 style="text-align: center; padding-top: 2%;" id="ourservices">Our Products</h1>
+        <div class="categories">
+            <img src="images/figures.png" alt="toys">
+            <p><b>Figures & Dolls</b></p>
+            <small>
+                Our figure and doll business offers a unique and comprehensive 
+                collection of high-quality toys that cater to collectors and 
+                enthusiasts alike. We offer a vast array of products ranging from 
+                popular franchises to rare and hard-to-find items. High end materials
+                is our focus.
+            </small>
+        </div>
+        <div class="categories">
+            <img src="images/plushies.png" alt="plushies">
+            <p><b>Plushies</b></p>
+            <small>
+                Our plushie business offers a wide selection of high-quality, soft
+                 and cuddly stuffed anime characters that are perfect for collectors 
+                 and gift-giving. We pride ourselves on our attention to detail, affordability, 
+                 and commitment to providing excellent customer service.
+            </small>
+        </div>
+        <div class="categories">
+            <img src="images/collectibles.png" alt="collectibles">
+            <p><b>Toys & Collectibles</b></p>
+            <small>
+                Our toys and collectibles business offers a unique and diverse selection of high-quality 
+                items that cater to collectors and enthusiasts alike. We offer a wide variety of products, 
+                ranging from classic and retro toys to rare and highly sought-after collectibles
+            </small>
+        </div>
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>otaku resin</h4>
+                        <ul>
+                            <li><a href="about.html">about us</a></li>
+                            <li><a href="home.html#ourservices">our services</a></li>
+                            <li><a href="readmore.html">author</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>get help</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">shipping</a></li>
+                            <li><a href="#">returns</a></li>
+                            <li><a href="#">order status</a></li>
+                            <li><a href="#">payment options</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>online shop</h4>
+                        <ul>
+                            <li><a href="items.html#Figures">shop items</a></li>
+                            <li><a href="https://www.facebook.com/3PointerMidorima" target="_blank">other sites</a></li>
+                            <li><a href="#">contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <ul>
+                            <li><a href="https://www.facebook.com/Churtnoel/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com/_itoshisae" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/kertyyy/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </body>
+</html>

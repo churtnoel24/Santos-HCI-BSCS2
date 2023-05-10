@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <title>Otaku Resin Shop</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container1">
+        <header id="navbar">
+            <div class="logo">
+                <img src="images/logo.png">
+                </a>
+            </div>
+            <div class="shopping">
+                <i class="fa fa-shopping-bag"></i>
+                <span class="quanity" id="cart-quantity">0</span>
+                <div class="backbutton"><a href="home.html" class="backbutton"><i class="fa fa-backspace">Home</i></a>
+                </div>
+            </div>
+        </header>
+        <div class="list"></div>
+    </div>
+    <div class="card">
+        <h1>Card</h1>
+        <ul class="listCard"></ul>
+        <div class="checkout">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+    <script>
+        
+        
+        let openShopping = document.querySelector('.shopping');
+        let closeShopping = document.querySelector('.closeShopping');
+        let list = document.querySelector('.list');
+        let listCard = document.querySelector('.listCard');
+        let body = document.querySelector('body');
+        let total = document.querySelector('.total');
+        let quantity = document.querySelector('.quantity');
+
+        openShopping.addEventListener('click', () => {
+            body.classList.add('active');
+        })
+
+        closeShopping.addEventListener('click', () => {
+            body.classList.remove('active');
+        })
+
+        let products = [
+            {
+                id: 1,
+                name: 'Sonya',
+                image: 'sonya.jpg',
+                price: 139
+            },
+            {
+                id: 2,
+                name: 'Yuzuhira',
+                image: 'yuzuhira.jpg',
+                price: 139
+            },
+            {
+                id: 3,
+                name: 'Gabimaru',
+                image: 'gabimaru.jpg',
+                price: 139
+            },
+            {
+                id: 4,
+                name: 'Ouran HS',
+                image: 'ouran.jpg',
+                price: 139
+            },
+            {
+                id: 5,
+                name: 'Vivi Ornitier',
+                image: 'Vivi Ornitier.jpg',
+                price: 139
+            },
+            {
+                id: 6,
+                name: 'Advent',
+                image: 'advent.jpg',
+                price: 139
+            },
+            {
+                id: 7,
+                name: 'Acrylic Stand & Tin Badge',
+                image: 'Fantasia Bunko Outing Fair Acrylic Stand & Tin Badge Set.jpg',
+                price: 139
+            },
+            {
+                id: 8,
+                name: 'KonoSuba',
+                image: 'KonoSuba An Explosion on This Wonderful World.jpg',
+                price: 139
+            },
+            {
+                id: 9,
+                name: 'Tin Badges Complete Box Set',
+                image: 'Oshi no Ko Tradable Tin Badges Complete Box Set.jpg',
+                price: 139
+            }
+        ];
+
+        let listCards = [];
+        function initApp() {
+            products.forEach((value, key) => {
+                let newDiv = document.createElement('div');
+                newDiv.classList.add('item');
+                newDiv.innerHTML = `
+      <img src="images/${value.image}">
+      <div class="title">${value.name}</div>
+      <div class="price">${value.price.toLocaleString()}</div>
+      <button onclick="addToCard(${key})">Add To Cart</button>`;
+                list.appendChild(newDiv);
+            })
+        }
+        initApp();
+        function addToCard(key) {
+            if (listCards[key] == null) {
+                // copy product form list to list card
+                listCards[key] = JSON.parse(JSON.stringify(products[key]));
+                listCards[key].quantity = 1;
+            }
+            reloadCard();
+            updateQuantity();
+        }
+        function reloadCard() {
+            listCard.innerHTML = '';
+            let count = 0;
+            let totalPrice = 0;
+            listCards.forEach((value, key) => {
+                totalPrice = totalPrice + value.price;
+                count = count + value.quantity;
+                if (value != null) {
+                    let newDiv = document.createElement('li');
+                    newDiv.innerHTML = `
+                    <div><img src="images/${value.image}"/></div>
+                    <div>${value.name}</div>
+                    <div>${value.price.toLocaleString()}</div>
+                    <div>
+                        <button onclick="changeQuantity(${key}, '${value.quantity - 1}')">-</button>
+                        <div class="count">${value.quantity}</div>
+                        <button onclick="changeQuantity(${key}, '${value.quantity + 1}')">+</button>
+                    </div>`;
+                    listCard.appendChild(newDiv);
+                }
+            })
+            total.innerText = totalPrice.toLocaleString();
+            updateQuantity();
+            quantity.innerText = count;
+        }
+        function changeQuantity(key, quantity) {
+            if (quantity == 0) {
+                delete listCards[key];
+            } else {
+                listCards[key].quantity = quantity;
+                listCards[key].price = quantity * products[key].price;
+            }
+            reloadCard();
+        }
+
+        function updateQuantity() {
+            const cartQuantity = document.getElementById('cart-quantity');
+            const count = listCards.reduce((total, item) => total + (item ? item.quantity : 0), 0);
+            cartQuantity.textContent = count.toString();
+        }
+
+    </script>
+
+</body>
+
+</html>

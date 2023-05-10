@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Google Sans Regular";
+    box-sizing: border-box;
+}
+
+:root {
+    --container-bg-color: #333;
+    --left-bg-color: rgba(40, 42, 43, 0.7);
+    --left-button-hover-color: rgba(65, 62, 62, 0.3);
+    --right-bg-color: rgba(43,43,43, 0.8);
+    --right-button-hover-color: rgba(92, 92, 92, 0.3);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed:1000ms;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: #BEBEBE;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+.logo img{
+    margin-top: 20px;
+    width: 100px;
+    height: auto;
+}
+
+.hamburger{
+    display: none;
+}
+
+.nav_bar ul {
+    display: flex;
+}
+
+.nav_bar ul li a{
+    display: block;
+    color: #000;
+    font-size: 20px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+
+.nav_bar ul li a:hover{
+    color: white;
+    background: black;
+}
+
+.nav_bar ul li a.active{
+    color: white;
+    background: black;
+}
+
+@media only screen and (max-width: 1320px) {
+
+    header{
+        padding: 0 50px;
+
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    header{
+        padding: 0 30px;
+        
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .hamburger{
+        display:block;
+        cursor: pointer;
+    }
+    .hamburger .line{
+        width: 30px;
+        height: 3px;
+        background: black;
+        margin: 6px 0;
+    }
+    .nav_bar{
+        height: 0;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #BEBEBE;
+        transition: 0.2s;
+        overflow: hidden;
+        z-index: 9999;
+    }
+    .nav_bar.active{
+        height: 100%;
+    }
+
+    .nav_bar ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .nav_bar.active ul{
+        opacity: 1;
+    }
+    .nav_bar ul li a{
+        margin-bottom: 12px;
+    }
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+h1{
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    text-align: center;
+}
+
+p{
+    font-size: 1.5rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+.button {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 2.5rem;
+    padding-top: 10px;
+    width: 10rem;
+    text-align: center;
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transform: translateX(-50%);
+}
+
+.split.left .button:hover{
+    background-color: var(--left-button-hover-color);
+    border-color: var(--left-button-hover-color);
+}
+
+.split.right .button:hover{
+    background-color: var(--right-button-hover-color);
+    border-color: var(--right-button-hover-color);
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--container-bg-color);
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left {
+    left:0;
+    background: url('images/uchiha.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.split.left:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--left-bg-color);
+}
+
+.split.right {
+    right: 0;
+    background: url('images/minato.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.split.split.right:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--right-bg-color);
+}
+
+.split.left, .split.right, .split.left:before, .split.right:before{
+    transition: var(--speed) all ease-in-out;
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+.hover-left .right:before {
+    z-index: 2;
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left {
+    width: var(--other-width);
+}
+
+.hover-right .left:before {
+    z-index: 2;
+}
+
+@media only screen and (max-width: 900px) {
+    h1{
+        font-size: 2rem;
+    }
+}

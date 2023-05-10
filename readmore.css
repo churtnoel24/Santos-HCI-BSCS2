@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+header{
+    background-image: url(images/background1.png);
+    height: 10vh;
+    background-size: cover;
+    background-position: center;
+}
+
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid gray;
+    transition: 0.3s ease;
+}
+
+ul li a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+ul li.active a{
+    background-color: #fff;
+    color: #000;
+}
+.main{
+    max-width: 1200px;
+    margin: auto;
+}
+
+body{
+    background-color: #efefef;
+}
+
+.profile-img{
+    width:40%;
+    float: right;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.img2 {
+    transform: rotate(180deg);
+    margin-top: -5%;
+}
+.about{
+    margin-left: 15px;
+    font-size: 100%;
+}
+.profile-info{
+    width: 60%;
+    height: 100vh;
+    float: left;
+    padding: 0 30px;
+    
+}
+.profile-info h1{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.social-media img{
+    height: 30px; 
+    margin-right:15px;
+}
+.social-media{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.profile-info h2{
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.expertise img{
+    height: 95px;
+    margin: 5px;
+}
+.expertise{
+    display: inline-block;
+    width: 28%;
+    padding: 30px 10px;
+    margin: 2%;
+    text-align: center;
+    box-shadow: 0 0 15px 1px rgba(37, 73, 214, 0.18);
+    background-color: white;
+}
+.expertise small{
+    padding-top: 10px;
+    display: block;
+}
+.projects img{
+    width: 31%;
+    padding: 4px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+@media screen and (max-width:900px) {
+    .profile-img {
+        width: 100%;
+    }
+    .profile-img img {
+        width: 100%;
+        height: 500px;
+    }
+    .about {
+        font-size: 100%;
+    }
+    div.profile-info {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+        font-size: 100%;
+    }
+    div.expertise {
+        width: 100%;
+        display: block;
+    }
+    .projects img {
+        width: 100%;
+    }
+}
