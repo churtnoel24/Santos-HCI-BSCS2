@@ -1,2 +1,2 @@
 # Santos-HCI-BSCS2
-hci website
+Santos, Churt Noel BSCS2A
