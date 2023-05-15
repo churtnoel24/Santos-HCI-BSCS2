@@ -418,6 +418,10 @@ header{
         transform: none;
         transition: transform 330ms ease-in-out;
     }
+    .caption-container {
+      display: none;
+    }
+  
   }
 
   .button {
